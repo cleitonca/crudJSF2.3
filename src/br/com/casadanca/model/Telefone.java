@@ -2,10 +2,11 @@ package br.com.casadanca.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Telefone implements Serializable {
 
-	
-	private Long id;
 	
 	private Integer dddCelular;
 	

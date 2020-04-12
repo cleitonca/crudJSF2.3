@@ -3,8 +3,13 @@ package br.com.casadanca.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Aluno implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "ALUNO")
+public class Aluno implements Serializable {
+	
 	
 	public enum Sexo {
 		Masculino, Feminino;
