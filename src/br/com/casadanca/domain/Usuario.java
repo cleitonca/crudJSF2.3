@@ -1,4 +1,4 @@
-package br.com.casadanca.model;
+package br.com.casadanca.domain;
 
 import java.io.Serializable;
 import java.util.Date;

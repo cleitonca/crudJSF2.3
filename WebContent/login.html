@@ -1,24 +1,27 @@
-<!doctype html>
-<html lang="en">
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	    <meta name="description" content="">
-	    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-	    <meta name="generator" content="Jekyll v3.8.6">
-	    <title>Login</title>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+	<h:head>
+	    <h:meta charset="utf-8"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	    <meta name="description" content=""/>
+	    <meta name="author" content="Cleiton do Carmo Araújo"/>
+	   
+	    <h:title>Login</title>
 	
-	    <link href="css/estilos.css" rel="stylesheet" type='text/css' media='all'>
-	
-		<link href="css/bootstrap.css" rel="stylesheet" type='text/css' media='all'>
+	    <link href="css/estilos.css" rel="stylesheet" type='text/css' media='all'/>
+		<link href="css/bootstrap.css" rel="stylesheet" type='text/css' media='all'/>
 	    
-	
 	    <!-- Favicons -->
+		<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png"/>
+		<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png"/>
 	
-		<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-		<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-	
-		<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+		<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico"/>
 		
 		<style>
 			body{
@@ -26,25 +29,33 @@
 			}
 		</style>
 
-		
-	   
-	</head>
+	</h:head>
   
-	<body class="text-center">
+	<h:body class="text-center">
+			
+			<h:panelGroup rendered="#{!ifacesContext.messageList.isEmpty()}">
+				<div id="infoMessage">
+					<h:messages />
+				</div>
+			</h:panelGroup>
+	
+			<br/>
+			<br/>
+	
 			<form class="form-signin">
 			  <!-- <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
 			  
-			  <h1 class="h3 mb-3 font-weight-normal">Por favor, faÃ§a seu login</h1>
+			  <h1 class="h3 mb-3 font-weight-normal">Por favor, faça seu login</h1>
 			  
 			  <label for="email" class="sr-only">Email</label>
-			  <input type="email" id="email" class="form-control" placeholder="Email" required autofocus/>
+			  <input type="email" jsf:value="{usuarioBean.usuario.email}" id="email" jsf:label="Email" class="form-control" placeholder="Email" required autofocus/>
 			  
 			  <label for="senha" class="sr-only">Senha</label>
-			  <input type="password" id="senha" class="form-control" placeholder="Senha" required/>
+			  <input type="password" jsf:value="{usuarioBean.usuario.email}" id="senha" jsf:label="Senha" class="form-control" placeholder="Senha" required/>
 			  
-			  <button class="btn btn-lg btn-primary btn-block" type="submit">ENTRAR</button>
+			  <button class="btn btn-lg btn-primary btn-block" jsf:action="#{usuarioBean.envia}" type="submit">ENTRAR</button>
 		
 			</form>
 	    
-	</body>
+	</h:body>
 </html>
